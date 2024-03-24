@@ -8,10 +8,16 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+//agrego mica:
+let bandasRoutes= require('./routes/index');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+// agrego mica:
+app.use('/', bandasRoutes);
+
 
 app.use(logger('dev'));
 app.use(express.json());
