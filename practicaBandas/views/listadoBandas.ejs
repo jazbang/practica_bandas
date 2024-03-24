@@ -1,0 +1,9 @@
+<h1>Listado de bandas</h1>
+<ul>
+    <% for (let i = 0; i < lista.lista.length; i++) { %>
+        <h2> El nombre de la banda es <%= lista.lista[i].nombre %></h2>   
+        <a href="/bandas/<%= lista.lista[i].id %>">  
+        <img src="<%= lista.lista[i].cover %>" alt="imagenBanda">
+        </a>
+    <% } %>
+</ul>
