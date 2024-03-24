@@ -9,8 +9,21 @@ router.get('/', function(req, res, next) {
 });
 
 //agrego mica:
-router.get('/', function(req,res){
+router.get('/bandas', function(req,res){
   res.send(bandas)
 });
+
+router.get('/:idGenero', function(req, res){
+  let idGenero = req.params.idGenero;
+  let bandaId = [];
+
+  for(let i=0; i< bandas.lista.length; i++){
+    if (bandas.lista[i].genero == idGenero){
+      bandaId.push(bandas.lista[i]);
+    }
+  }
+  return res.send(bandaId);
+});
+
 
 module.exports = router;
