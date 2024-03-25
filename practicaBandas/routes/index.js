@@ -13,6 +13,9 @@ router.get('/', function(req, res, next) {
 //agrego mica:
 router.get('/bandas',bandasControlador.index);
 
+// agrego tomi:
+router.get('/bandas/:id', bandasControlador.filtrarPorId);
+
 //router.get('/:id', function(req, res){
 // let id = req.params.id;
  // let bandaId = [];

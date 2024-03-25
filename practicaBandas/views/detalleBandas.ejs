@@ -1,0 +1,17 @@
+<% if (lista && lista.length > 0) { %>
+    <% for(let i = 0; i < lista.length; i++) { %>
+        <h1>Detalle de banda: <%= lista[i].nombre %></h1>
+        <p>Género: <%= lista[i].genero %></p> 
+        <p>Cantidad de integrantes: <%= lista[i].integrantes %></p>
+        <img src="<%= lista[i].cover %>" alt="<%= lista[i].nombre %>">
+        <p>Top Canciones:</p>
+        <ul>
+            <% for(let j = 0; j < lista[i].topCanciones.length; j++) { %>
+                <li><%= lista[i].topCanciones[j] %></li>
+            <% } %>
+        </ul>
+        <a href="<%= lista[i].video %>" target="_blank">Video</a>
+    <% } %>
+<% } else { %>
+    <p>No se encontró la banda.</p>
+<% } %>
