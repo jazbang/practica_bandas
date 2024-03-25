@@ -24,7 +24,7 @@ let controlador= {
           let minuscula= bandas.lista[i].genero.toLowerCase();
           let generoBanda = minuscula.replace(' ', '_');
           if (generoBanda == genero) {
-            datosFiltrados.push(bandas.lista[i])
+            filtrado.push(bandas.lista[i])
           }
         }
         res.render('porGenero',{lista: filtrado, genero: genero})
