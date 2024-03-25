@@ -1,7 +1,7 @@
 <% if (lista && lista.length > 0) { %>
     <% for(let i = 0; i < lista.length; i++) { %>
         <h1>Detalle de banda: <%= lista[i].nombre %></h1>
-        <p>Género: <%= lista[i].genero %></p> 
+        <p>Género: <a href="/bandas/<%= lista[i].genero.toLowerCase() %>"><%= lista[i].genero%></a></p> 
         <p>Cantidad de integrantes: <%= lista[i].integrantes %></p>
         <img src="<%= lista[i].cover %>" alt="<%= lista[i].nombre %>">
         <p>Top Canciones:</p>
