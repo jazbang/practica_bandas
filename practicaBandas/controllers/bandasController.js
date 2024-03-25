@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 let bandas= require('../db/index');
 
 let controlador= {
@@ -16,6 +16,18 @@ let controlador= {
           }
         }
         res.render('detalleBandas',{lista: datosFiltrados})
+      },
+      filtrarPorGenero: function(req,res){
+        let genero= req.params.genero;
+        let filtrado= [];
+        for (let i = 0; i < bandas.length; i++) {
+          let minuscula= bandas.lista[i].genero.toLowerCase();
+          let generoBanda = minuscula.replace(' ', '_');
+          if (generoBanda == genero) {
+            datosFiltrados.push(bandas.lista[i])
+          }
+        }
+        res.render('porGenero',{lista: filtrado, genero: genero})
       }
 }
 

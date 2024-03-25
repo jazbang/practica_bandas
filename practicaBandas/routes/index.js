@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 });
 
 //agrego mica:
-router.get('/bandas',bandasControlador.index);
+router.get('/bandas', bandasControlador.index);
 
 // agrego tomi:
 router.get('/bandas/:id', bandasControlador.filtrarPorId);
@@ -27,6 +27,9 @@ router.get('/bandas/:id', bandasControlador.filtrarPorId);
  // }
  // return res.send(bandaId);
 // });
+
+// agrego jaz:
+router.get('/bandas/:genero', bandasControlador.filtrarPorGenero);
 
 
 module.exports = router;
